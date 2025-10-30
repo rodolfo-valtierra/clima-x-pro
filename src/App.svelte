@@ -2,10 +2,12 @@
 	import {Router} from 'sv-router';
 	import {navigate, p} from 'sv-router/generated'
 	import './app.css'
-	import NavBar from './HeadBar/NavBar.svelte'
+	import NavBar from './MainPage/NavBar.svelte'
+	import Footer from './MainPage/Footer.svelte'
 </script>
 
 <NavBar>
-	<Router />
+	<Router/>
 </NavBar>
+<Footer/>
 	
