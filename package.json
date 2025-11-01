@@ -21,6 +21,10 @@
     "vite": "^7.1.7"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/free-regular-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/svelte-fontawesome": "^0.2.4",
     "@tailwindcss/vite": "^4.1.16",
     "sv-router": "^0.10.3",
     "svelte-material-ui": "^8.0.3",
