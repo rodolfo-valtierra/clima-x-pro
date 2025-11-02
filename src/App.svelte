@@ -6,6 +6,6 @@
 </script>
 
 <NavBar>
-	<Router />
+	<Router/>
 </NavBar>
 	
