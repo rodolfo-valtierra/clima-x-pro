@@ -3,5 +3,5 @@
 @plugin '@tailwindcss/typography'; */
 
 @theme {
-		--color-dark-blue: #052543;
+		--color-logo-blue: #052543;
 }
