@@ -12,10 +12,10 @@
 		{img: Carolina, name: "Carolina GB", position:"Depto. Administrativo"}
 	])
 </script>
-<div class="grid gap-10 grid-rows-3 h-fit">
+<div class="grid gap-5 grid-rows-3 h-fit my-5">
 	<Titulo text="Nuestro Equipo"/>
-	<img class="-z-1 blur-sm w-220 place-self-center drop-shadow-2xl" src={Logo} alt="">
-	<div class="flex flex-row justify-center items-center gap-20">
+	<img class="-z-1 blur-sm place-self-center  drop-shadow-2xl" src={Logo} alt="">
+	<div class="flex flex-row justify-center xl:gap-10 gap-2">
 		{#each members as member}
 			<IconImg image={member.img} name={member.name} position={member.position}/>
 		{/each}
