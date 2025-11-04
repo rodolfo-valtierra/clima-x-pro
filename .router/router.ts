@@ -1,16 +1,20 @@
 import { createRouter } from 'sv-router';
 import Index from '../src/routes/index.svelte';
+import QuienesSomosIconText from '../src/routes/quienes-somos/IconText.svelte';
 import QuienesSomosIndex from '../src/routes/quienes-somos/index.svelte';
 import QuienesSomosInformation from '../src/routes/quienes-somos/information.svelte';
 import QuienesSomosMisionVision from '../src/routes/quienes-somos/mision-vision.svelte';
+import QuienesSomosTeamFooter from '../src/routes/quienes-somos/TeamFooter.svelte';
 import ServicesId from '../src/routes/services/[id].svelte';
 
 export const routes = {
   '/': Index,
   '/quienes-somos': {
+    '/IconText': QuienesSomosIconText,
     '/': QuienesSomosIndex,
     '/information': QuienesSomosInformation,
-    '/mision-vision': QuienesSomosMisionVision
+    '/mision-vision': QuienesSomosMisionVision,
+    '/TeamFooter': QuienesSomosTeamFooter
   },
   '/services': {
     '/:id': ServicesId
