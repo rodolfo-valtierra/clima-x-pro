@@ -1,19 +1,20 @@
 
 <script>
-	import {searchParams} from 'sv-router'
+	import {route} from 'sv-router/generated'
 	import ServicesList from '$component/ServicesList.svelte'
 	import BackService from '$lib/back-service.jpg'
 	import ImgMantenance from '$lib/mantenimiento1.jpeg'
 	import Services from '$utils/services.js'
 	import Title from '$component/Title.svelte'
 
-	let service_id = searchParams.get('id');
+	let service_id = route.params.id;
 
 </script>
-	<Title text="Services"/>
+
+<Title text="Services"/>
 <div class="grid grid-cols-4 justify-center">
 	<div class="col-start-2 border rounded-xl bg-dark-blue text-white py-7" style={`background-image: url(${BackService})`}>
-		<ServicesList service={service_id} onclick={(service)=> service_id=service}/>
+		<ServicesList service={service_id}/>
 	</div>
 	<div class="overlap col-start-3 place-items-center" >
 		<div class="z-2 bg-white">
