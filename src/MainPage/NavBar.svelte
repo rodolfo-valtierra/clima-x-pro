@@ -4,7 +4,6 @@
 	let {children} = $props();
 
   function showMobile (event) {
-    console.log(event.target.hidden)
     event.target.hidden = !event.target.hidden;
   }
 
