@@ -6,7 +6,7 @@
 
 </script>
 
-<footer class=" flex flex-col bg-logo-blue py-10 h-200 justify-items-center">
+<footer id="pie" class=" flex flex-col bg-logo-blue py-10 h-200 justify-items-center">
 	<div class="grid auto-row-max grid-cols-2 grid-flow-row gap-y-5 justify-around">
 		<Map/>
 		<EmailForm/>
