@@ -21,7 +21,7 @@
 			<div class="w-20 h-30 bg-logo-blue -skew-x-15 rounded-s-xl"></div>
 		</div>
 		<div class="row-span-1 lg:col-start-3 sm:col-start-3 col-end-5 bg-logo-blue text-white h-30 ps-10 grid content-center ">
-			<span>DISTRIBUCION Y MANTENIMIENTO DE <b>SYSTEMAS HVAC</b></span>
+			<span>Distribucion y mantenimiento de <b>Sistemas HVAC</b></span>
 		</div>
 		<div class="row-span-2 relative -top-3 lg:col-start-3 sm:col-start-3 col-end-5 min-w-full">
 			<div class="text-black rounded-s-xl top-18 ps-8 bg-white grid content-center justify-items-start ">
@@ -60,7 +60,7 @@
 			container-type: inline-size;
 	}
 	.tag-bottom > * {
-		font-size: clamp(18pt, 1dvw, 1.9dvw);
+		font-size: clamp(14pt, 20pt, 3.6dvw);
 	}
 
 	.logo-glow::before {
