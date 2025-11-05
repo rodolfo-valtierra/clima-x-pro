@@ -1,6 +1,6 @@
 <script>
-	import Image2 from "$lib/image2.jpeg"
-	import Logo from "$lib/img4.PNG"
+	import Image2 from "$lib/image2.jpeg";
+	import Logo from "$lib/img4.PNG";
 </script>
 
 <section class="w-fit justify-items-center">
@@ -8,7 +8,7 @@
 	<div class="grid grid-cols-2 w-full">
 		<div class="col-span-1 absolute -top-10 z-1 triangle "></div>
 	</div>
-	<div class="back-logo grid grid-rows-2 -skew-x-15 absolute top-100 lg:left-[28%] sm:left-0 lg:px-25 content-center sm:px-3 pt-3 mx-7 z-1  max-h-45 min-h-30  max-w-230 bg-white">
+	<div class="back-logo grid grid-rows-2 -skew-x-15 absolute top-70 lg:left-[28%] sm:left-0 lg:px-25 content-center sm:px-3 pt-3 mx-7 z-1  max-h-45 min-h-30  max-w-230 bg-white">
 			<div class="logo-glow row-span-1 col-span-full skew-x-15 max-w-160">
 				<img class="mx-2" src={Logo} alt="no logo" />
 			</div>
@@ -16,16 +16,16 @@
 				<span class="shadow-higth italic mx-1">You deserve the best...</span>
 			</div>
 	</div>
-	<div class="tag-bottom absolute grid grid-rows-2 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 top-160  z-3 w-full h-fit justify-content-end">
+	<div class="tag-bottom absolute grid grid-rows-2 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 top-130  z-3 w-full h-fit justify-content-end">
 		<div class="row-span-1 col-span-2 grid justify-items-end w-full ms-7 -z-1">
 			<div class="w-20 h-30 bg-logo-blue -skew-x-15 rounded-s-xl"></div>
 		</div>
 		<div class="row-span-1 lg:col-start-3 sm:col-start-3 col-end-5 bg-logo-blue text-white h-30 ps-10 grid content-center ">
-			<span>VENTA Y MANTENIMIENTO HVAC</span>
+			<span>DISTRIBUCION Y MANTENIMIENTO DE <b>SYSTEMAS HVAC</b></span>
 		</div>
 		<div class="row-span-2 relative -top-3 lg:col-start-3 sm:col-start-3 col-end-5 min-w-full">
 			<div class="text-black rounded-s-xl top-18 ps-8 bg-white grid content-center justify-items-start ">
-					<span >CEO:Abraham Pedraza Marquez</span>
+					<span >Cotiza con nosotros</span>
 			</div>	
 		</div>
 	</div>
@@ -49,7 +49,7 @@
 	}
 
 	.triangle {
-		opacity: 0.7;
+		opacity: 0.9;
 		height: var(--back);
 		border-left: 50vw solid #052543;
 		border-bottom: 60vh solid transparent;
