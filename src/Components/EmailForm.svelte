@@ -2,7 +2,7 @@
 	import ServicesList from '$utils/services.js'
 </script>
 
-<div class="xl:order-last order-first grid xl:auto-cols-2 xl:auto-rows-2 auto-rows-auto m-2 text-white place-center items-center gap-3 h-76">
+<div class="xl:order-last order-first grid  m-2 text-white place-center items-center gap-3 md:h-76">
 	<h1 class="col-span-2 text-4xl">Contactanos y cotiza con nosotros</h1>
 	<div class="col-start-1 grid-fields gap-5 content-start">
 		<div class="flex flex-col col-start-1">
@@ -46,4 +46,11 @@
     grid-area:  1 / 2 / auto / 2;
     height: fit-content;
   }
+
+  @media (width < 740px) {
+    .grid-fields {
+      display: flex;
+      flex-direction: column;
+      }
+    }
 </style>
