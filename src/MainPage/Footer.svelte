@@ -6,15 +6,21 @@
 
 </script>
 
-<footer id="pie" class=" flex flex-col bg-logo-blue py-10 h-200 justify-items-center">
-	<div class="grid auto-row-max grid-cols-2 grid-flow-row gap-y-5 justify-around">
+<footer class="bg-logo-blue py-10">
+	<div class="flex xl:flex-row flex-col lg:justify-center items-center gap-3">
 		<Map/>
 		<EmailForm/>
+  </div>
+  <div class="flex lg:flex-row flex-col my-4 lg:justify-around items-center">
 		<SocialNet/>
-		<div class="w-40">
+		<div class="xl:order-last order-first w-40">
 			<img src={Rheem} alt="">
 		</div>
 	</div>
+  <div class="text-white flex justify-center">
+    Copyrigths CLIMAXPRO&copy
+  </div>
 </footer>
+
 
 
