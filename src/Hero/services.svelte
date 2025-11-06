@@ -6,7 +6,6 @@
 	import Calidad from '$lib/calidad.jpg'
 	import BackService from '$lib/back-service.jpg'
 	import Title from '$component/Title.svelte'
-	import {navigate} from 'sv-router/generated'
 </script>
 
 <section class="flex flex-col my-10 gap-10 w-full">
@@ -17,15 +16,15 @@
 		</div>
 		<div class="relative border w-170 rounded-xl bg-logo-blue text-white pt-8" style={`background-image: url(${BackService})`}>
 			<div class="absolute top-5 md:left-[80%] left-92 text-[#F34401] bg-white z-2 text-center w-26 shadow-[0px_0px_26px_1px] shadow-gray-700 px-1 pb-3 rounded-[20px]">
-				<h2 class="text-[28pt] font-bold ">18+</h2>
+				<h2 class="lg:text-[28pt] text-[17pt] font-bold ">18+</h2>
 				<p class="text-center leading-none">
 					a&ntildeos de 
 					experiencia
 				</p>
 			</div>
-			<ServicesList title="Catalogo de servicios" onclick={(service) => {navigate('/services/'+service)}}>
-				<img class="absolute top-17 md:left-100 left-92 md:w-45 w-25 rounded-[20px]" src={Mantenimiento} alt="mantenimiento">
-				<img class="absolute top-54 left-[50%]  md:w-50 w-30 rounded-[20px]" src={Calidad} alt="calidad">
+			<ServicesList title="Catalogo de servicios" >
+				<img class="absolute md:top-17 top-25 md:left-100 left-92 md:w-45 w-30 rounded-[20px]" src={Mantenimiento} alt="mantenimiento">
+				<img class="absolute top-60 left-[50%]  md:w-50 w-30 rounded-[20px]" src={Calidad} alt="calidad">
 			</ServicesList>
 		</div>	
 	</div>

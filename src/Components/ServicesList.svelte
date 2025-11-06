@@ -15,10 +15,10 @@
 	{#if title}
 		<h1 class="py-1 text-[20pt] relative z-2 px-8">{title}</h1>
 	{/if}
-	<div class="flex flex-col text-xl relative ul">
+	<div class="flex flex-col lg:text-xl text-[12pt]">
 		{@render children?.()}
 		{#each Services as service, i}
-			<a class={["py-1 cursor-pointer hover:bg-white hover:text-black my-1 px-10 color-white", (i==id?'bg-white':'')]} href={p(`/services/${i}`)}>
+			<a class={["py-1 cursor-pointer hover:bg-white hover:text-black my-1 lg:px-10 px-3 color-white", (i==id?'bg-white':'')]} href={p(`/services/${i}`)}>
 				<span class={[(i==id?'text-black':'white')]}>{service}</span>
 			</a>
 		{/each}

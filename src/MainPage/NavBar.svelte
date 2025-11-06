@@ -1,10 +1,21 @@
 <script>
 	import Logo from '$lib/img4.PNG'
-	import {p} from 'sv-router/generated'
+	import {p, route} from 'sv-router/generated'
+  import Links from '$utils/navLinks.js'
 	let {children} = $props();
+  let showMobile = $state(false);
 
-  function showMobile (event) {
-    event.target.hidden = !event.target.hidden;
+  function displayMobileMenu (event) {
+    showMobile = !showMobile;
+  }
+
+  function showLink (event) {
+    showMobile = false;
+    const id = route.hash;
+    
+    if (route.hash.includes('#'))
+      document.querySelector(id).scrollIntoView({behavior: 'smooth'});
+
   }
 
 </script>
@@ -13,7 +24,7 @@
     <div class="relative flex h-16 items-center">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <!-- Mobile menu button-->
-        <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+        <button onclick={displayMobileMenu} class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
@@ -31,26 +42,25 @@
       </div>
       <div class="hidden sm:ml-6 sm:block justify-self-end text-lg">
         <div class="flex space-x-4">
-            <a aria-current="page" href="/">Home</a>
-            <a href={p('#productos')}>Products</a>
-            <a href={p('#pie')}>Contactos</a>
-            <a href={p("/services/1")}>Servicios</a>
-            <a href={p("/quienes-somos")}>Quienes somos?</a>
+            {#each Links as link}
+            <a href={p(link.link)} onclick={showLink}>{link.name}</a>
+            {/each}
         </div>
       </div>
     </div>
   </div>
 
-  <div id="mobile-menu" class="absolute top-15 w-full bg-white  rounded-md" hidden on:command={showMobile}>
+  <div id="mobile-menu" class="absolute top-15 w-full bg-white  rounded-md" hidden={!showMobile}>
     <div class="space-y-1 px-2 pt-2 pb-3 hover:bg-white">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-      <a href="/" aria-current="page" class="block rounded-md focus:bg-logo-blue px-3 py-2 text-base font-medium focus:text-white">Home</a>
-      <a href="#productos" class="block rounded-md px-3 py-2 text-base font-medium  focus:bg-logo-blue focus:text-white">Productos</a>
-      <a href="#contacto" class="block rounded-md px-3 py-2 text-base font-medium focus:bg-logo-blue focus:text-white">Contactos</a>
-      <a href="/servicios/1" class="block rounded-md px-3 py-2 text-base font-medium  focus:bg-logo-blue focus:text-white">Servicios</a>
-      <a href="/quienes-somos" class="block rounded-md px-3 py-2 text-base font-medium  focus:bg-logo-blue focus:text-white">Quienes somos?</a>
+      {#each Links as link}
+        <a href={p(link.link)} class="block rounded-md px-3 py-2 text-base font-medium  focus:bg-logo-blue focus:text-white" onclick={showLink} >
+          {link.name}
+        </a>
+      {/each}
     </div>
   </div>
 </nav>
 {@render children?.()}
+
 
