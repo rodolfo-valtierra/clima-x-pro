@@ -9,4 +9,4 @@
 <NavBar>
 	<Router/>
 </NavBar>
-<!-- <Footer/> -->
+<Footer/>
