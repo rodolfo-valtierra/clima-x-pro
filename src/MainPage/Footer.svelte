@@ -18,7 +18,7 @@
 		</div>
 	</div>
   <div class="text-white flex justify-center">
-    Copyrigths CLIMAXPRO&copy
+    CLIMAXPRO Todos los derechos revervados &copy 2025
   </div>
 </footer>
 
