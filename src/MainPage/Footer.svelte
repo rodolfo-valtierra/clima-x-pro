@@ -6,7 +6,7 @@
 
 </script>
 
-<footer id="pie" class="bg-logo-blue py-10">
+<footer id="pie" class="bg-logo-blue py-10" >
 	<div class="flex xl:flex-row flex-col lg:justify-center items-center gap-3">
 		<Map/>
 		<EmailForm/>

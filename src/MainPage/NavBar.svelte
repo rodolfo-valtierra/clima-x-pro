@@ -9,13 +9,13 @@
     showMobile = !showMobile;
   }
 
-  function showLink (event) {
+  async function showLink (event) {
     showMobile = false;
     const id = route.hash;
-    
+    console.log(id)
+    console.log(document.querySelector(id))
     if (route.hash.includes('#'))
       document.querySelector(id).scrollIntoView({behavior: 'smooth'});
-
   }
 
 </script>
@@ -43,7 +43,7 @@
       <div class="hidden sm:ml-6 sm:block justify-self-end text-lg">
         <div class="flex space-x-4">
             {#each Links as link}
-            <a href={p(link.link)} onclick={showLink}>{link.name}</a>
+            <a id={link.name} href={p(link.link)} onclick={showLink}>{link.name}</a>
             {/each}
         </div>
       </div>
