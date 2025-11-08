@@ -20,7 +20,7 @@
 
 </script>
 <nav class="fixed z-3 w-full">
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 bg-white rounded-b-md">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 bg-white rounded-b-md shadow-xl">
     <div class="relative flex h-16 items-center">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <!-- Mobile menu button-->
@@ -35,7 +35,7 @@
           </svg>
         </button>
       </div>
-      <div class="flex flex-1 items-center md:justify-self-start justify-center sm:items-stretch ">
+      <div class="flex flex-1 items-center lg:justify-start justify-center lg:items-stretch ">
         <div class="flex shrink-0 items-center">
           <img class="h-12 w-auto" src={Logo} alt="logo 4">
         </div>
