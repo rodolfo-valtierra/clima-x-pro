@@ -22,7 +22,7 @@
 </script>
 
 <section class="flex flex-col items-center my-10">
-  <div class="w-300">
+  <div class="w-150 my-6">
     <Title text="Servicios HVAC para todo tipo de comercio consulta, mantenimiento o reparaciones de emergencia"/>
   </div>
   <div class="flex flex-row gap-2 justify-between items-center">
