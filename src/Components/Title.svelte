@@ -1,8 +1,9 @@
 <script >
 	import Logo from "$lib/logo-X.PNG"
-	let {text} = $props();
+	let {text, size="30pt", ...rest} = $props();
+	const cla = rest.class+' flex justify-center '
 </script>
-<div class="flex justify-center">
-	<img class="xl:h-16 h-12" src={Logo} alt="Logo X">
-	<h1 class="xl:text-[32pt] text-[22pt]">{text}</h1>
+<div class={cla}>
+	<img class="w-15" src={Logo} alt="Logo X">
+	<h1 class={`text-[${size}]`} >{text}</h1>
 </div>
