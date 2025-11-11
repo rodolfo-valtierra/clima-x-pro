@@ -6,6 +6,6 @@
 </script>
 
 <div class={cla}>
-	<img class="xl:h-16 h-12" src={Logo} alt="Logo X">
 	<h1 class={[`lg:text-[${size}pt] text-[${size-10}pt]`]}>{text}</h1>
+	<img class="xl:h-16 h-12" src={Logo} alt="Logo X">
 </div>

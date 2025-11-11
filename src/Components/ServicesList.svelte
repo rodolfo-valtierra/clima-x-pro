@@ -1,13 +1,12 @@
 <script>
 	import Services from '$utils/services.js'
-  import {p} from 'sv-router/generated'
 
 	let {service=-1, children, onclick, title=''} = $props();
 	let id = $state(service);
 
 	const setId = (serviceId) => {
 		id = serviceId;
-		onclick(serviceId);
+    onclick(serviceId)
 	}
 </script>
 
@@ -18,9 +17,9 @@
 	<div class="flex flex-col lg:text-xl text-[12pt]">
 		{@render children?.()}
 		{#each Services as service, i}
-			<a class={["py-1 cursor-pointer hover:bg-white hover:text-black my-1 lg:px-10 px-3 color-white", (i==id?'bg-white':'')]} href={p(`/services/${i}`)}>
+			<div class={["py-1 cursor-pointer hover:bg-white hover:text-black my-1 lg:px-10 px-3 color-white", (i==id?'bg-white':'')]} onclick={() => setId(i)}>
 				<span class={[(i==id?'text-black':'white')]}>{service}</span>
-			</a>
+			</div>
 		{/each}
 	</div>
 </div>
