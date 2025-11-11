@@ -12,8 +12,6 @@
   async function showLink (event) {
     showMobile = false;
     const id = route.hash;
-    console.log(id)
-    console.log(document.querySelector(id))
     if (route.hash.includes('#'))
       document.querySelector(id).scrollIntoView({behavior: 'smooth'});
   }
