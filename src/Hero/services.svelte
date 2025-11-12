@@ -1,11 +1,15 @@
 <script>
 	import ServicesList from '$component/ServicesList.svelte'
 	import ImgMantenance from '$lib/mantenimiento1.jpeg'
-	import Logo from "$lib/logo-X.PNG"
 	import Mantenimiento from '$lib/mantenimiento2.jpg'
 	import Calidad from '$lib/calidad.jpg'
 	import BackService from '$lib/back-service.jpg'
 	import Title from '$component/Title.svelte'
+  import {navigate} from 'sv-router/generated'
+
+  function goTo(serviceId) {
+    navigate('/services/'+serviceId)
+  }
 </script>
 
 <section class="flex flex-col my-10 gap-10 w-full">
@@ -22,7 +26,7 @@
 					experiencia
 				</p>
 			</div>
-			<ServicesList title="Catalogo de servicios" >
+			<ServicesList title="Catalogo de servicios" onclick={goTo} >
 				<img class="absolute md:top-17 top-25 md:left-100 left-92 md:w-45 w-30 rounded-[20px]" src={Mantenimiento} alt="mantenimiento">
 				<img class="absolute top-60 left-[50%]  md:w-50 w-30 rounded-[20px]" src={Calidad} alt="calidad">
 			</ServicesList>
@@ -30,42 +34,3 @@
 	</div>
 </section>
 
-<style>
-	*.triangle {
-		--top-triangle: -4dvw;
-	}
- .triangle {
-		height: 10px;
-		border-left: 2dvw solid #F34401;
-		border-bottom: 6dvw solid transparent;
-		border-top: 5dvw solid transparent;
-	}
-
-	.triangle {
-		position: absolute;
-		z-index: 2;
-	}
-
-	.triangle:nth-child(1){
-		left: 0rem;
-		top: var(--top-triangle);
-		transform: rotate(-140deg);
-	}
-
-	.triangle:nth-child(4) {
-		left: 34dvw;
-		top: var(--top-triangle);
-		transform: rotate(-40deg);
-	}
-
-	.triangle:nth-child(2) {
-		left: 0rem;
-		top: 19dvw;
-		transform: rotate(140deg)
-	}
-	.triangle:nth-child(5) {
-		left: 34dvw;
-		top: 19dvw;
-		transform: rotate(40deg)
-	}
-</style>

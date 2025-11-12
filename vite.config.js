@@ -11,6 +11,10 @@ export default defineConfig({
 		router(),
 		tailwindcss()
 	],
+  build: {
+    assetsInLineLimit: 1024 * 1024,
+     chunkSizeWarningLimit: 1600,
+  }, 
 	resolve: {
     alias: {
 			$hero: path.resolve('./src/Hero'),

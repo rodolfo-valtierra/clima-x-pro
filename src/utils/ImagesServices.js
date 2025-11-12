@@ -1,4 +1,5 @@
-const images = Object.keys(import.meta.glob('$lib/sectores/*.*'))
+const meta = import.meta.glob('$lib/sectores/*.*', {eager:true})
+const images = Object.keys(meta).map(m=> meta[m].default)
 
 const sectors = [
   {title:'Comercial', icon: 'fa-solid fa-industry'},

@@ -28,9 +28,7 @@
 		"titulo"
 		"team";
 	}
-	.grid > h1 {
-		grid-area: titulo;
-	}
+	
 	.grid > * {
 		grid-area: team;
 	}
