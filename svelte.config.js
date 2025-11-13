@@ -1,4 +1,5 @@
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
+import adapter from '@sveltejs/adapter-vercel'
 import path from 'path';
 /** @type {import("@sveltejs/vite-plugin-svelte").SvelteConfig} */
 
@@ -15,7 +16,8 @@ export default {
 			$component: path.resolve('./src/Components/'),
 			$lib: path.resolve('./src/lib/'),		
 			$utils: path.resolve('./src/utils/'),		
-		}
+      },
+    adapter: adapter()
 	},
 
 }
