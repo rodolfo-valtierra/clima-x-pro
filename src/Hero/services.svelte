@@ -7,12 +7,14 @@
 	import Title from '$component/Title.svelte'
   import {navigate} from 'sv-router/generated'
 
+
   function goTo(serviceId) {
     navigate('/services/'+serviceId)
   }
-</script>
 
-<section class="flex flex-col place-content-center gap-10 w-full h-[100dvh] snap-center">
+  </script>
+
+<section  class="section-out flex flex-col place-content-center gap-10 w-full h-[100dvh] snap-center">
 		<Title text="Servicios especializados"/>
 	<div class="relative flex flex-row gap-4 justify-center ">
 		<div class="w-180 hidden lg:block">
@@ -35,23 +37,4 @@
 </section>
 
 
-<style>
-  
-  section {
-    animation: 1ms scrolling linear forwards;
-    animation-timeline: --my-scroller;
-  }
-
-  @keyframes scrolling {
-    from {
-      opacity: 0;
-      transform: scale(0.8)
-      }
-      35% {
-      opacity: 1;
-      transform: scale(1)
-        }
-    }
-
-</style>
 

@@ -4,10 +4,10 @@
 
 </script>
 <div class="main-div hove:relative">
- <h1 class="z-2 bg-logo-blue h-20 text-center flex flex-row items-center justify-center  text-xl opacity-85 text-white  rounded-lg">
-  <FontAwesomeIcon {icon}/>{title}
+ <h1 class="z-2 bg-logo-blue h-[20%]  text-center flex flex-row items-center justify-center  text-xl opacity-85 text-white  rounded-lg">
+  <FontAwesomeIcon {icon}  />{title}
  </h1>
- <img class="h-120 w-85 z-1 rounded-lg" {src} alt="">
+ <img class="h-[35dvw] w-85 z-1 rounded-lg" {src} alt="">
 </div>
 
 
@@ -33,14 +33,14 @@
       }
       & > h1 {
         z-index: 3;
-        transform: scale(.7);
+        transform: scaleX(.6);
         top: 40%;
       }
       & img {
         box-shadow: 0px 0px 10px 7px white;
       }
 
-    transform: translate(0px, -20px) scaleX(1.3);
+    transform: translate(0px, -20px) scaleX(1.5);
     transition: all 0.3s ;
   }
 

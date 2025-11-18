@@ -10,7 +10,7 @@
 	</div>
 	<div class="back-logo grid grid-rows-2 -skew-x-15 absolute top-70 lg:left-[28%] sm:left-0 lg:px-25 content-center sm:px-3 pt-3 mx-7 z-1  max-h-45 min-h-30  max-w-230 bg-white">
 			<div class="logo-glow row-span-1 col-span-full skew-x-15 max-w-160 h-fit">
-				<img class="mx-2" src={Logo} alt="no logo" />
+				<img class="drop-shadow mx-2" src={Logo} alt="no logo" />
 			</div>
 			<div class="row-span-2 ps-5 skew-x-15  self-end text-right ">
 				<span class="shadow-higth italic mx-1">You deserve the best...</span>
@@ -77,12 +77,12 @@
     background: no-repeat conic-gradient(from var(--logo-corner), white 70%, #016dc3);
     background-size: 127px 100%;
     backdrop-filter: blur(5);
-		clip-path: path("M 18 42 L 50,42 L 65,61 L 104,17 L 123,17 L 76,77 L 103,117 L 76,117 L 59,100 L 17,143 L 0,143 L 46,81 z");
+		clip-path: path("M 18 42 L 50,42 L 65,61 L 104,17 L 127,17 L 78,77 L 103,117 L 76,117 L 59,100 L 17,143 L 0,143 L 45,81 z");
     position: absolute;
     width: 20%;
     height: 9rem;
 		top: -1rem;
-    left: 49.3%;
+    left: 49%;
     z-index: -1;
     animation: 3s logo-move linear infinite;
     container-name: logo-container;
@@ -109,4 +109,9 @@
 	.shadow-higth {
 		text-shadow: #000000c7 -3px 4px 7px;
 	}
+
+  .drop-shadow {
+    filter: drop-shadow(0px 0px 12px #00000069);
+    }
 </style>
+
