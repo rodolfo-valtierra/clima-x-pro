@@ -10,11 +10,7 @@ import ServicesId from '../src/routes/services/[id].svelte';
 export const routes = {
   '/': Index,
   '/quienes-somos': {
-    '/IconText': QuienesSomosIconText,
     '/': QuienesSomosIndex,
-    '/information': QuienesSomosInformation,
-    '/mision-vision': QuienesSomosMisionVision,
-    '/TeamFooter': QuienesSomosTeamFooter
   },
   '/services': {
     '/:id': ServicesId
