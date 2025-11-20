@@ -1,11 +1,11 @@
 <script>
 	import ServicesList from '$component/ServicesList.svelte'
 	import ImgMantenance from '$lib/mantenimiento1.jpeg'
-	import Logo from "$lib/logo-X.PNG"
 	import Mantenimiento from '$lib/mantenimiento2.jpg'
 	import Calidad from '$lib/calidad.jpg'
 	import BackService from '$lib/back-service.jpg'
 	import Title from '$component/Title.svelte'
+  import {navigate} from 'sv-router/generated'
 </script>
 
 <section class="flex flex-col my-10 gap-10 w-full">
@@ -22,7 +22,7 @@
 					experiencia
 				</p>
 			</div>
-			<ServicesList title="Catalogo de servicios" >
+			<ServicesList title="Catalogo de servicios" onclick={(id) => navigate("/services/"+id)} >
 				<img class="absolute md:top-17 top-25 md:left-100 left-92 md:w-45 w-30 rounded-[20px]" src={Mantenimiento} alt="mantenimiento">
 				<img class="absolute top-60 left-[50%]  md:w-50 w-30 rounded-[20px]" src={Calidad} alt="calidad">
 			</ServicesList>

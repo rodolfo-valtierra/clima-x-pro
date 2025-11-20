@@ -7,13 +7,13 @@
 	import Services from '$utils/services.js'
 	import Title from '$component/Title.svelte'
 
-	let service_id = route.params.id;
+	let service_id = $state(route.params.id);
 </script>
-<div class="flex flex-col pt-20 gap-5">
+<div class="flex flex-col pt-20 gap-5 h-full">
   <Title text="Services"/>
   <div class="grid lg:grid-cols-4 grid-cols-2 lg:justify-around justify-start">
     <div class="lg:col-start-2 border rounded-xl bg-dark-blue text-white py-7" style={`background-image: url(${BackService})`}>
-      <ServicesList service={service_id}/>
+      <ServicesList bind:service={service_id}/>
     </div>
     <div class="relative sm:top-50% -z-1 overlap lg:col-start-3 place-items-center" >
       <div class="z-2 bg-white text-md">
