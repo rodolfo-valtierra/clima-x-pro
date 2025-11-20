@@ -4,7 +4,7 @@
 	import NavBar from './MainPage/NavBar.svelte'
 	import Footer from './MainPage/Footer.svelte';
 
-  const loadAnimations = () => {
+  setTimeout(() => {
     const observer = new IntersectionObserver((entries, observer) => {
 
     entries.forEach(entry => {
@@ -25,10 +25,10 @@
       observer.observe(el);
     })
   
-  }
+  }, 1000)
 </script>
 <NavBar>
-	<Router onrouteLoaded={loadAnimations}/>
+	<Router />
 </NavBar>
 <Footer />
 
@@ -41,7 +41,7 @@
   :global(.section-in) {
     opacity: 1;
     transform: scale(1);
-    transition: 1s all linear;
+    transition: 0.5s all linear;
     }
 
 </style>
