@@ -1,5 +1,5 @@
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
-import adapter from '@sveltejs/adapter-vercel'
+//import adapter from '@sveltejs/adapter-vercel'
 import path from 'path';
 /** @type {import("@sveltejs/vite-plugin-svelte").SvelteConfig} */
 
@@ -17,11 +17,6 @@ export default {
 			$lib: path.resolve('./src/lib/'),		
 			$utils: path.resolve('./src/utils/'),		
       },
-    adapter: adapter({
-      pages: 'build',
-      assets: 'build',
-      fallback: undefined
-    })
-	},
+  },
 
 }
