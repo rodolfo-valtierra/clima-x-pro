@@ -4,6 +4,7 @@
   import {isActiveLink} from 'sv-router'
   import Links from '$utils/navLinks.js'
   import {FontAwesomeIcon} from '@fortawesome/svelte-fontawesome';
+  import {faEnvelope} from '@fortawesome/free-regular-svg-icons';
   import {whatsappText} from  "$utils/texts.js"
 
 	let {children} = $props();
@@ -58,11 +59,11 @@
 </nav>
 <div class="fixed top-200 left-5 z-4 grid grid-cols-auto gap-3">
   <a class="enlace-to flex flex-row items-center gap-2" target="blank" href={"https://wa.me/+524772846535?text="+whatsappText} >
-    <FontAwesomeIcon class="text-[green] hover:animate-bounce bg-white rounded-full" size="3x" icon="fa-brands fa-whatsapp"/>
+    <FontAwesomeIcon class="bg-[#25d366] hover:animate-bounce text-white rounded-full" size="3x" icon="fa-brands fa-whatsapp"/>
     <span class="bg-white rounded-lg" >+52 (477) 284 65 35</span>
   </a>
   <a  onclick={() => document.getElementById('pie').scrollIntoView()} class="enlace-to flex flex-row items-center gap-2">
-    <FontAwesomeIcon class="text-white hover:animate-bounce bg-logo-blue rounded-sm" size="3x" icon="fa-solid fa-envelope"/>
+    <FontAwesomeIcon class="text-logo-blue bg-white hover:animate-bounce  rounded-md" size="3x" icon={['fa','envelope']}/>
     <span class="bg-white rounded-xl" >ventas.climaxpro@gmail.com</span>
   </a>
 </div>
