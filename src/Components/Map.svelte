@@ -4,7 +4,7 @@
 	import Plaza from '$lib/san-martin.png'
 </script>
 
-<div class="xl:order-first order-last w-140 grid xl:auto-cols-2 auto-cols-1 text-left text-white justify-center mx-2">
+<div class="xl:order-first order-last md:w-140 grid xl:auto-cols-2 auto-cols-1 text-left text-white justify-center mx-2">
 	<FontAwesomeIcon icon="col-span-1 row-span-2 fa-solid fa-earth-americas" size="2x"/>
 	<h1 class="font-bold text-lg z-2">Visitanos en nuestras oficinas</h1>
 	<div class="map col-start-2 h-fit text-left mx-1 ">

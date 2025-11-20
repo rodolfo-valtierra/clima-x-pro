@@ -6,7 +6,7 @@
 
 	const setId = (serviceId) => {
 		id = serviceId;
-		onclick(serviceId);
+    onclick(serviceId)
 	}
 </script>
 
@@ -14,12 +14,12 @@
 	{#if title}
 		<h1 class="py-1 text-[20pt] relative z-2 px-8">{title}</h1>
 	{/if}
-	<ul class="text-[16pt] relative ul">
+	<div class="flex flex-col lg:text-xl text-[12pt]">
 		{@render children?.()}
 		{#each Services as service, i}
-			<li class={["py-1 cursor-pointer hover:bg-white hover:text-black my-1 px-10 color-white", (i==id?'bg-white':'')]} onclick={()=> setId(i)}>
+			<div class={["py-1 cursor-pointer hover:bg-white hover:text-black my-1 lg:px-10 px-3 color-white", (i==id?'bg-white':'')]} onclick={() => setId(i)}>
 				<span class={[(i==id?'text-black':'white')]}>{service}</span>
-			</li>
+			</div>
 		{/each}
-	</ul>
+	</div>
 </div>
