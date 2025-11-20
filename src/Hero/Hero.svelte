@@ -17,13 +17,13 @@
 			</div>
 	</div>
 	<div class="tag-bottom absolute grid grid-rows-2 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 top-130  z-3 w-full h-fit justify-content-end">
-		<div class="row-span-1 col-span-2 grid justify-items-end w-full ms-7 -z-1">
+		<!-- <div class="row-span-1 col-span-2 grid justify-items-end w-full ms-7 -z-1">
 			<div class="w-20 h-30 bg-logo-blue -skew-x-15 rounded-s-xl"></div>
-		</div>
-		<div class="row-span-1 lg:col-start-3 sm:col-start-3 col-end-5 bg-logo-blue text-white h-30 ps-10 grid content-center ">
+		</div> -->
+		<div class="back-skew row-span-1 lg:col-start-3 sm:col-start-3 col-end-5 text-white h-30 ps-10 grid content-center ">
 			<span>Distribucion y mantenimiento de <b>Sistemas HVAC</b></span>
 		</div>
-		<div class=" row-span-2 relative -top-3 lg:col-start-3 sm:col-start-3 col-end-5 min-w-full">
+		<div class=" row-span-2 relative -top-3 lg:col-start-3 sm:col-start-3 col-end-5 min-w-full h-fit">
 			<div class="text-black rounded-s-xl top-18 ps-8 bg-white grid content-center justify-items-start ">
 					<span >Cotiza con nosotros</span>
 			</div>	
@@ -57,14 +57,50 @@
 	}
 
 	.tag-bottom {
-			container-name: tag-container;
-			container-type: inline-size;
+    container-name: tag-container;
+    container-type: inline-size;
 	}
 
-	.tag-bottom > * {
-		font-size: clamp(14pt, 18pt, 3.6dvw);
-    animation: 7s tag-scale linear infinite;
+  .back-skew {
+    border-right: 4rem solid var(--color-logo-blue);
+  }
+  .back-skew > * {
+    animation: 1s tag-scale linear;
+  }
+	.back-skew::before {
+    content: '';
+    position: absolute;
+    left: 45%;
+    width: 53%;
+    height: 50%;
+    z-index: -1;
+    background-color: var(--color-logo-blue);
+    border-radius: 15px 25px 0px 15px;
+    transform: skew(-20deg);
+    animation: 1s tag-scale ease-out;
 	}
+
+  @media (width < 800px) {
+    .back-skew::before {
+      width: 100%;
+      left: 0;
+      }
+    }
+
+  .tag-bottom {
+    font-size: clamp(14pt, 18pt, 3.6dvw);
+  }
+
+  .tag-bottom > div:nth-child(2) {
+      animation: 1.5s tag-scale ease-out;
+  }
+
+  @keyframes tag-scale {
+    from {
+      transform: scaleX(0.5) translate(100%) 
+    }
+    to {transform: scaleX(1) translate(0%) skew(-20deg)}
+    }
 
   @property --logo-corner {
     syntax: "<angle>";
@@ -88,6 +124,20 @@
     container-name: logo-container;
     container-type: inline-size;
 	}
+
+  .back-logo{
+    animation: 2s logo-scale ease-out both;
+    animation-delay: 0.1s;
+  }
+
+  @keyframes logo-scale {
+    from { transform: rotateY(85deg) skew(-25deg)}
+    80% {
+      transform:  skew(-30deg);
+      }
+    to {transform: rotateY(0deg) skew(-15deg);
+    }
+  }
 
   @keyframes logo-move {
     to {
