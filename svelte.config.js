@@ -17,7 +17,11 @@ export default {
 			$lib: path.resolve('./src/lib/'),		
 			$utils: path.resolve('./src/utils/'),		
       },
-    adapter: adapter()
+    adapter: adapter({
+      pages: 'build',
+      assets: 'build',
+      fallback: undefined
+    })
 	},
 
 }

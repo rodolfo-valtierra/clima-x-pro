@@ -13,7 +13,7 @@ export default defineConfig({
 	],
   build: {
     assetsInLineLimit: 1024 * 1024,
-     chunkSizeWarningLimit: 1600,
+   chunkSizeWarningLimit: 1600,
   }, 
 	resolve: {
     alias: {
