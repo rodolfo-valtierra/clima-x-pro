@@ -5,7 +5,7 @@
   import Links from '$utils/navLinks.js'
   import {FontAwesomeIcon} from '@fortawesome/svelte-fontawesome';
   import {faEnvelope} from '@fortawesome/free-regular-svg-icons';
-  import {whatsappText} from  "$utils/texts.js"
+  import {whatsappText} from  "$utils/Texts.js"
 
 	let {children} = $props();
   let showMobile = $state(false);
