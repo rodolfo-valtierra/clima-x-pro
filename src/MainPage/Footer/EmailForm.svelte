@@ -1,5 +1,6 @@
 <script>
 	import ServicesList from '$utils/services.js'
+  import {FontAwesomeIcon} from '@fortawesome/svelte-fontawesome';
 </script>
 
 <div class="xl:order-first order-first flex flex-col m-2 mb-8 text-white place-center items-center gap-3 md:h-fit w-fit">
@@ -34,6 +35,9 @@
       <textarea name="message" rows="4" placeholder="Describe el servicio aqui..."></textarea>
     </div>
 	</div>
+  <button class="bg-logo-orange transition w-30 text-xl py-1 rounded-md hover:scale-110 items-center">
+    Enviar <FontAwesomeIcon class="transition hover:rotate-50" icon="fa-paper-plane"/> 
+  </button>
   <h2 class="font-bold text-lg">O envianos correo directamente a:</h2>
   <h2 class="bg-white text-xl font-bold text-black"><span class="text-logo-blue">clima</span><span class="text-logo-orange">x</span>
   <span class="text-logo-sky">pro</span>@gmail.com</h2>
