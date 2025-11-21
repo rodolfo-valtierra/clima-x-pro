@@ -2,14 +2,13 @@
 	import EmailForm from '$component/EmailForm.svelte'
 	import Rheem from '$lib/servicio-especial.png'
 	import Map from '$component/Map.svelte'
-	import SocialNet from '$component/SocialNet.svelte'
-
+	import SocialNet from '$component/SocialNet.svelte';
 </script>
 
 <footer id="pie" class="bg-logo-blue py-10" >
-	<div class="flex xl:flex-row flex-col lg:justify-center items-center gap-3">
-		<Map/>
+	<div class="flex xl:flex-row flex-col lg:justify-center items-start gap-4">
 		<EmailForm/>
+		<Map/>
   </div>
   <div class="flex lg:flex-row flex-col my-4 lg:justify-around items-center">
 		<SocialNet/>
@@ -18,7 +17,7 @@
 		</div>
 	</div>
   <div class="text-white flex justify-center">
-    CLIMAXPRO Todos los derechos revervados &copy 2025
+    CLIMAXPRO Todos los derechos revervados 2025 &copy
   </div>
 </footer>
 
