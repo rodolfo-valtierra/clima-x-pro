@@ -6,14 +6,10 @@
 	import BackService from '$lib/back-service.jpg'
 	import Title from '$component/Title.svelte'
   import {navigate} from 'sv-router/generated'
-
-  function goTo(serviceId) {
-    navigate('/services/'+serviceId)
-  }
 </script>
 
-<section class="flex flex-col my-10 gap-10 w-full">
-		<Title text="Servicios especializados"/>
+<section  class="section-out flex flex-col place-content-center gap-10 w-full h-fit my-20 snap-center">
+  <Title text="Servicios especializados" class=" text-lg"/>
 	<div class="relative flex flex-row gap-4 justify-center ">
 		<div class="w-180 hidden lg:block">
 			<img src={ImgMantenance} alt="Not maintenance">
@@ -26,11 +22,13 @@
 					experiencia
 				</p>
 			</div>
-			<ServicesList title="Catalogo de servicios" onclick={goTo} >
+			<ServicesList title="Catalogo de servicios" onclick={(id) => navigate("/services/"+id)} >
 				<img class="absolute md:top-17 top-25 md:left-100 left-92 md:w-45 w-30 rounded-[20px]" src={Mantenimiento} alt="mantenimiento">
 				<img class="absolute top-60 left-[50%]  md:w-50 w-30 rounded-[20px]" src={Calidad} alt="calidad">
 			</ServicesList>
 		</div>	
 	</div>
 </section>
+
+
 

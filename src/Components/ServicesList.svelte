@@ -1,24 +1,24 @@
 <script>
 	import Services from '$utils/services.js'
 
-	let {service=-1, children, onclick, title=''} = $props();
-	let id = $state(service);
+	let {service=$bindable(-1), children, onclick = null, title=''} = $props();
 
 	const setId = (serviceId) => {
-		id = serviceId;
-    onclick(serviceId)
+    service = serviceId;
+		onclick && onclick(serviceId);
+
 	}
 </script>
 
 <div class="relative">
 	{#if title}
-		<h1 class="py-1 text-[20pt] relative z-2 px-8">{title}</h1>
+		<h1 class="py-1 lg:text-[20pt] text-[12pt] relative z-2 px-8">{title}</h1>
 	{/if}
-	<div class="flex flex-col lg:text-xl text-[12pt]">
+	<div class="flex flex-col md:text-xl text-[10pt]">
 		{@render children?.()}
-		{#each Services as service, i}
-			<div class={["py-1 cursor-pointer hover:bg-white hover:text-black my-1 lg:px-10 px-3 color-white", (i==id?'bg-white':'')]} onclick={() => setId(i)}>
-				<span class={[(i==id?'text-black':'white')]}>{service}</span>
+		{#each Services as s, i}
+			<div class={["py-1 cursor-pointer hover:bg-white hover:text-black my-1 lg:px-10 px-3 color-white", (i==service?'bg-white':'')]} onclick={() => setId(i)}>
+				<span class={[(i==service?'text-black':'white')]}>{s}</span>
 			</div>
 		{/each}
 	</div>

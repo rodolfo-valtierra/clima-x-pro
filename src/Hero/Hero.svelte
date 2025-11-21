@@ -9,21 +9,21 @@
 		<div class="col-span-1 absolute -top-10 z-1 triangle "></div>
 	</div>
 	<div class="back-logo grid grid-rows-2 -skew-x-15 absolute top-70 lg:left-[28%] sm:left-0 lg:px-25 content-center sm:px-3 pt-3 mx-7 z-1  max-h-45 min-h-30  max-w-230 bg-white">
-			<div class="logo-glow row-span-1 col-span-full skew-x-15 max-w-160">
-				<img class="mx-2" src={Logo} alt="no logo" />
+			<div class="logo-glow row-span-1 col-span-full skew-x-15 max-w-160 h-fit">
+				<img class="drop-shadow mx-2" src={Logo} alt="no logo" />
 			</div>
-			<div class="row-span-2 ps-5 skew-x-15  self-end text-right">
+			<div class="row-span-2 ps-5 skew-x-15  self-end text-right ">
 				<span class="shadow-higth italic mx-1">You deserve the best...</span>
 			</div>
 	</div>
 	<div class="tag-bottom absolute grid grid-rows-2 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 top-130  z-3 w-full h-fit justify-content-end">
-		<div class="row-span-1 col-span-2 grid justify-items-end w-full ms-7 -z-1">
+		<!-- <div class="row-span-1 col-span-2 grid justify-items-end w-full ms-7 -z-1">
 			<div class="w-20 h-30 bg-logo-blue -skew-x-15 rounded-s-xl"></div>
-		</div>
-		<div class="row-span-1 lg:col-start-3 sm:col-start-3 col-end-5 bg-logo-blue text-white h-30 ps-10 grid content-center ">
+		</div> -->
+		<div class="back-skew row-span-1 lg:col-start-3 sm:col-start-3 col-end-5 text-white h-30 ps-10 grid content-center ">
 			<span>Distribucion y mantenimiento de <b>Sistemas HVAC</b></span>
 		</div>
-		<div class="row-span-2 relative -top-3 lg:col-start-3 sm:col-start-3 col-end-5 min-w-full">
+		<div class=" row-span-2 relative -top-3 lg:col-start-3 sm:col-start-3 col-end-5 min-w-full h-fit">
 			<div class="text-black rounded-s-xl top-18 ps-8 bg-white grid content-center justify-items-start ">
 					<span >Cotiza con nosotros</span>
 			</div>	
@@ -41,11 +41,11 @@
 	}
 
 	.back-logo {
-		box-shadow: -45px 45px 40px 5px #f84101;
+		box-shadow: -45px 45px 30px 0px #f84101;
 	}
 
-	.back-logo > * {
-		font-size: clamp(17pt, 28pt,3.6dvw);
+  .back-logo > * {
+		font-size: clamp(17pt, 23pt,3.6dvw);
 	}
 
 	.triangle {
@@ -55,21 +55,101 @@
 		border-bottom: 60vh solid transparent;
 		border-top: 60vh solid transparent;
 	}
+
 	.tag-bottom {
-			container-name: tag-container;
-			container-type: inline-size;
-	}
-	.tag-bottom > * {
-		font-size: clamp(14pt, 20pt, 3.6dvw);
+    container-name: tag-container;
+    container-type: inline-size;
 	}
 
+  .back-skew {
+    border-right: 4rem solid var(--color-logo-blue);
+  }
+  .back-skew > * {
+    animation: 1s tag-scale linear;
+  }
+	.back-skew::before {
+    content: '';
+    position: absolute;
+    left: 45%;
+    width: 53%;
+    height: 50%;
+    z-index: -1;
+    background-color: var(--color-logo-blue);
+    border-radius: 15px 25px 0px 15px;
+    transform: skew(-20deg);
+    animation: 1s tag-scale ease-out;
+	}
+
+  @media (width < 800px) {
+    .back-skew::before {
+      width: 100%;
+      left: 0;
+      }
+    }
+
+  .tag-bottom {
+    font-size: clamp(14pt, 18pt, 3.6dvw);
+  }
+
+  .tag-bottom > div:nth-child(2) {
+      animation: 1.5s tag-scale ease-out;
+  }
+
+  @keyframes tag-scale {
+    from {
+      transform: scaleX(0.5) translate(100%) 
+    }
+    to {transform: scaleX(1) translate(0%) skew(-20deg)}
+    }
+
+  @property --logo-corner {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+    }
+  
 	.logo-glow::before {
 		content:'';
-		clip-path: path("M 0 40 L 15,40 L 30,70 L 60,5 L 75,5 L 40,92 L 65,120 L 45,120 L 26,90 L 15,150 L 0,150 L 15,78 z");
-		position: absolute;
-		top: 0;
+    background: no-repeat conic-gradient(from var(--logo-corner), white 70%, #016dc3);
+    background-size: 127px 100%;
+    backdrop-filter: blur(5);
+		clip-path: path("M 18 42 L 50,42 L 65,61 L 104,17 L 127,17 L 78,77 L 103,117 L 76,117 L 59,100 L 17,143 L 0,143 L 45,81 z");
+    position: absolute;
+    width: 20%;
+    height: 9rem;
+		top: -1rem;
+    left: 49%;
+    z-index: -1;
+    animation: 3s logo-move linear infinite;
+    container-name: logo-container;
+    container-type: inline-size;
 	}
 
+  .back-logo{
+    animation: 2s logo-scale ease-out both;
+    animation-delay: 0.1s;
+  }
+
+  @keyframes logo-scale {
+    from { transform: rotateY(85deg) skew(-25deg)}
+    80% {
+      transform:  skew(-30deg);
+      }
+    to {transform: rotateY(0deg) skew(-15deg);
+    }
+  }
+
+  @keyframes logo-move {
+    to {
+      --logo-corner: 360deg;
+      }
+  }
+  
+  @container logo-container (width < 600px) {
+    .logo-glow::before {
+      display: hidden;
+      }
+    }
 	@container tag-container (width < 1036px){
 		.tag-bottom::before{
 			left: 100%;
@@ -79,4 +159,9 @@
 	.shadow-higth {
 		text-shadow: #000000c7 -3px 4px 7px;
 	}
+
+  .drop-shadow {
+    filter: drop-shadow(0px 0px 12px #00000069);
+    }
 </style>
+

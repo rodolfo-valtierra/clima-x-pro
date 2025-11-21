@@ -2,10 +2,7 @@
 	import {FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 </script>
 
-<div class="mt-12 flex lg:flex-col flex-row xl:order-first order-last gap-2 text-white justify-center">
-  <div>
-		<FontAwesomeIcon icon="fa-solid fa-phone" size="2x"/>   4772846535		
-	</div>
+<div class="mt-12 flex  flex-row xl:order-first order-last gap-2 text-white justify-center">
 	<div>
 		<FontAwesomeIcon icon="fa-brands fa-facebook" size="2x"/>	Facebook		
 	</div>

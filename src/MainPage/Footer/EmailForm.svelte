@@ -2,8 +2,10 @@
 	import ServicesList from '$utils/services.js'
 </script>
 
-<div class="xl:order-first order-first flex flex-col m-2 mb-8 text-white place-center items-center gap-3 md:h-fit w-140">
-	<h1 class="col-span-2 text-4xl text-center">Contactanos al (477-284-6535) o cotiza con nosotros</h1>
+<div class="xl:order-first order-first flex flex-col m-2 mb-8 text-white place-center items-center gap-3 md:h-fit w-fit">
+	<h1 class="col-span-2 text-4xl text-center">
+    Contactanos al (477-284-6535) o cotiza con nosotros
+  </h1>
 	<div class="grid grid-cols-2 col-start-1 grid-fields gap-5 content-start">
     <div class="flex flex-col col-start-1 gap-2">
 			<label for="name">Nombre</label>
@@ -29,7 +31,7 @@
 		</div>	
     <div class="flex flex-col col-span-2  gap-2">
       <label for="message">Mensaje</label>
-      <textarea name="message" rows="4" cols="30" placeholder="Describe el servicio aqui..."></textarea>
+      <textarea name="message" rows="4" placeholder="Describe el servicio aqui..."></textarea>
     </div>
 	</div>
   <h2 class="font-bold text-lg">O envianos correo directamente a:</h2>
