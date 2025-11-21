@@ -4,9 +4,11 @@
 	import Map from '$component/Map.svelte'
 	import SocialNet from '$component/SocialNet.svelte'
 
+  let {...props} = $props();
+
 </script>
 
-<footer id="pie" class="bg-logo-blue py-10">
+<footer {...props} id="pie" class="bg-logo-blue py-10" >
 	<div class="flex xl:flex-row flex-col lg:justify-center items-center gap-3">
 		<Map/>
 		<EmailForm/>

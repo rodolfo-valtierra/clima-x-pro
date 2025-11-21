@@ -8,8 +8,8 @@
   import {navigate} from 'sv-router/generated'
 </script>
 
-<section class="flex flex-col my-10 gap-10 w-full">
-		<Title text="Servicios especializados"/>
+<section  class="section-out flex flex-col place-content-center gap-10 w-full h-fit my-20 snap-center">
+  <Title text="Servicios especializados" class=" text-lg"/>
 	<div class="relative flex flex-row gap-4 justify-center ">
 		<div class="w-180 hidden lg:block">
 			<img src={ImgMantenance} alt="Not maintenance">
@@ -30,42 +30,5 @@
 	</div>
 </section>
 
-<style>
-	*.triangle {
-		--top-triangle: -4dvw;
-	}
- .triangle {
-		height: 10px;
-		border-left: 2dvw solid #F34401;
-		border-bottom: 6dvw solid transparent;
-		border-top: 5dvw solid transparent;
-	}
 
-	.triangle {
-		position: absolute;
-		z-index: 2;
-	}
 
-	.triangle:nth-child(1){
-		left: 0rem;
-		top: var(--top-triangle);
-		transform: rotate(-140deg);
-	}
-
-	.triangle:nth-child(4) {
-		left: 34dvw;
-		top: var(--top-triangle);
-		transform: rotate(-40deg);
-	}
-
-	.triangle:nth-child(2) {
-		left: 0rem;
-		top: 19dvw;
-		transform: rotate(140deg)
-	}
-	.triangle:nth-child(5) {
-		left: 34dvw;
-		top: 19dvw;
-		transform: rotate(40deg)
-	}
-</style>

@@ -1,26 +1,22 @@
 <script>
 	import Logo from '$lib/img4.PNG'
 	import {p, route} from 'sv-router/generated'
+  import {isActiveLink} from 'sv-router'
   import Links from '$utils/navLinks.js'
+  import {FontAwesomeIcon} from '@fortawesome/svelte-fontawesome';
+  import {faEnvelope} from '@fortawesome/free-regular-svg-icons';
+  import {whatsappText} from  "$utils/Texts.js"
+
 	let {children} = $props();
   let showMobile = $state(false);
 
-  function displayMobileMenu (event) {
+  function displayMobileMenu () {
     showMobile = !showMobile;
   }
 
-  function showLink (event) {
-    showMobile = false;
-    const id = route.hash;
-    
-    if (route.hash.includes('#'))
-      document.querySelector(id).scrollIntoView({behavior: 'smooth'});
-
-  }
-
 </script>
-<nav class="fixed z-3 w-full">
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 bg-white rounded-b-md">
+<nav class="fixed z-4 w-full">
+  <div class="lg:mx-auto mx-0 max-w-7xl lg:px-6 px-1 bg-white rounded-b-md shadow-lg/30 ">
     <div class="relative flex h-16 items-center">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <!-- Mobile menu button-->
@@ -35,32 +31,87 @@
           </svg>
         </button>
       </div>
-      <div class="flex flex-1 items-center md:justify-self-start justify-center sm:items-stretch ">
+      <div class="flex flex-1 items-center lg:justify-start justify-center lg:items-stretch ">
         <div class="flex shrink-0 items-center">
           <img class="h-12 w-auto" src={Logo} alt="logo 4">
         </div>
       </div>
       <div class="hidden sm:ml-6 sm:block justify-self-end text-lg">
-        <div class="flex space-x-4">
+        <div class="flex ">
             {#each Links as link}
-            <a href={p(link.link)} onclick={showLink}>{link.name}</a>
+              <a id={link.name} use:isActiveLink href={p(link.link)} class="cursor-pointer hover:bg-logo-orange hover:text-white p-2 hover:rounded-sm transition duration-280 linear hover:translate-y-1" >{link.name}</a>
             {/each}
         </div>
       </div>
     </div>
   </div>
 
-  <div id="mobile-menu" class="absolute top-15 w-full bg-white  rounded-md" hidden={!showMobile}>
+  <div id="mobile-menu" class="absolute top-15 w-full bg-white rounded-md" hidden={!showMobile}>
     <div class="space-y-1 px-2 pt-2 pb-3 hover:bg-white">
-      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
       {#each Links as link}
-        <a href={p(link.link)} class="block rounded-md px-3 py-2 text-base font-medium  focus:bg-logo-blue focus:text-white" onclick={showLink} >
+        <a href={p(link.link)} use:isActiveLink class="block rounded-md px-3 py-2 text-base font-medium  focus:bg-logo-blue focus:text-white"  >
           {link.name}
         </a>
       {/each}
     </div>
   </div>
+  
 </nav>
+<div class="contactos-icons fixed lg:top-200 top-163 left-5 z-4 grid grid-cols-auto gap-3">
+  <a class="enlace-to flex flex-row items-center gap-2" target="blank" href={"https://wa.me/+524772846535?text="+whatsappText} >
+    <FontAwesomeIcon class="bg-[#25d366] hover:animate-bounce text-white rounded-full lg:text-5xl text-4xl"  icon="fa-brands fa-whatsapp"/>
+    <span class="bg-white rounded-lg" >+52 (477) 284 65 35</span>
+  </a>
+  <a  href="%23pie" class="enlace-to flex flex-row items-center gap-2">
+    <FontAwesomeIcon class="text-logo-blue bg-white hover:animate-bounce lg:text-5xl text-4xl rounded-md" icon={['fa','envelope']}/>
+    <span class="bg-white rounded-xl" >ventas.climaxpro@gmail.com</span>
+  </a>
+</div>
 {@render children?.()}
 
+<style>
+  .enlace-to:not(:hover) {
+    & span {
+      display: none;
+      opacity: 0;
+      }
+    }
+  .enlace-to:has(>span):hover {
+    & span {
+      display: block;
+      opacity: 1;
+      padding: 5px;
+      color: black;
+      font-weight: bold;
+      transition: opacity 5s linear;
+    }
+  }
 
+  a:global(.is-active) {
+    color: var(--color-logo-orange);
+    border-radius: 13px;
+  }
+
+  a:global(.is-active:hover) {
+    color: white;
+    }
+
+  .contactos-icons {
+    animation: 1s show-bouncy ease-out;
+  }
+
+  @keyframes show-bouncy {
+    from {
+      transform: translate(0px, 0px) scale(0);
+      }
+    80% {
+      transform: translate(0px, -12px) scale(1);
+      }
+    90% {
+      transform: translate(0px, 0px);
+      }
+    to {
+      transform: translate(0px, -12px) ;
+      }
+    }
+</style>
