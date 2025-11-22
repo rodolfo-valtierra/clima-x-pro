@@ -3,11 +3,11 @@
   let {src, title, icon} = $props()
 
 </script>
-<div class="main-div hove:relative">
- <h1 class="z-2 bg-logo-blue h-[20%]  text-center flex flex-row items-center justify-center  text-xl opacity-85 text-white  rounded-lg">
+<div class="main-div hover:relative snap-center lg:w-90 w-50">
+ <h1 class="text-white z-2 text-shadow-xs text-center lg:text-4xl text-lg items-center justify-center  text-white  rounded-lg  ">
   <FontAwesomeIcon {icon}  />{title}
  </h1>
- <img class="h-[35dvw] w-85 z-1 rounded-lg" {src} alt="">
+ <img class="z-1 rounded-lg lg:h-100 h-50 w-100" {src} alt="">
 </div>
 
 
@@ -15,32 +15,20 @@
   .main-div {
     display: grid;
     grid-template: "title";
+    align-items: center;
+    justify-content: center;
   }
 
   .main-div > * {
     grid-area: title;
   }
   
-  .main-div:hover{
-    position: relative;
+  .main-div:hover > h1{
     display: grid;
     z-index: 3;
-
-      & > * {
-        position: absolute;
-        width: 100%;
-        z-index: 2;
-      }
-      & > h1 {
-        z-index: 3;
-        transform: scaleX(.6);
-        top: 40%;
-      }
-      & img {
-        box-shadow: 0px 0px 10px 7px white;
-      }
-
-    transform: translate(0px, -20px) scaleX(1.5);
+    opacity: 0.7;
+    height: 100%;
+    background-color: var(--color-logo-blue);
     transition: all 0.3s ;
   }
 
