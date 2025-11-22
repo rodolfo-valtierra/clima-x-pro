@@ -1,11 +1,13 @@
 <script>
   import {FontAwesomeIcon} from '@fortawesome/svelte-fontawesome'
-  let {src, title, icon} = $props()
+  let {src, title, icon=null} = $props()
 
 </script>
 <div class="main-div hover:relative snap-center lg:w-90 w-50">
  <h1 class="text-white z-2 text-shadow-xs text-center lg:text-4xl text-lg items-center justify-center  text-white  rounded-lg  ">
-  <FontAwesomeIcon {icon}  />{title}
+  {#if icon}
+    <FontAwesomeIcon {icon} />{title}
+  {/if}
  </h1>
  <img class="z-1 rounded-lg lg:h-100 h-50 w-100" {src} alt="">
 </div>
