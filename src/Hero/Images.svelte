@@ -6,17 +6,21 @@
   import {FontAwesomeIcon} from '@fortawesome/svelte-fontawesome'
 </script>
 
-<section class="flex flex-col items-center justify-around mb-30  ">
+<section class="flex flex-col items-center mb-30  ">
   <div class="lg:w-180 w-100 my-10">
     <Title text="Servicios HVAC para todo tipo de comercio consulta, mantenimiento o reparaciones de emergencia"/>
   </div>
-  <div class="lg:w-300 w-full  ">
-    <Carousel >
+  <div class="flex flex-col items-center justify-center overflow-hidden w-300">
+    <Carousel perPage={3} >
       {#each images as img} 
         <OverTitle title={img.title} src={img.src} alt=""/>
       {/each}
-      <FontAwesomeIcon slot="left-control" icon="fa-angle-left"/>
-      <FontAwesomeIcon slot="right-control" icon="fa-angle-right"/>
+        {#snippet prevButton()}
+      <FontAwesomeIcon  icon="fa-angle-left"/>
+        {/snippet}
+        {#snippet nextButton()}
+      <FontAwesomeIcon icon="fa-angle-right"/>
+        {/snippet}
     </Carousel>
   </div>
 </section>

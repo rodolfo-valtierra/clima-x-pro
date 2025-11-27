@@ -3,13 +3,13 @@
   let {src, title, icon=null} = $props()
 
 </script>
-<div class="main-div hover:relative snap-center lg:w-90 w-50">
+<div class="main-div hover:relative  w-[90%]">
  <h1 class="text-white z-2 text-shadow-xs text-center lg:text-4xl text-lg items-center justify-center  text-white  rounded-lg  ">
   {#if icon}
     <FontAwesomeIcon {icon} />{title}
   {/if}
  </h1>
- <img class="z-1 rounded-lg lg:h-100 h-50 w-100" {src} alt="">
+ <img class="z-1 rounded-lg h-100 w-[100vw]" {src} alt="">
 </div>
 
 
@@ -27,7 +27,7 @@
   
   .main-div:hover > h1{
     display: grid;
-    z-index: 3;
+    z-index: 2;
     opacity: 0.7;
     height: 100%;
     background-color: var(--color-logo-blue);

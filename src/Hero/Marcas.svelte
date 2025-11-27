@@ -11,7 +11,7 @@
 <section class=" h-fit pb-20 my-10 py-5 bg-logo-blue grid grid-rows-3 justify-items-center items-center">
 	<Title class="row-span-1 text-white " color="white" size={30} text="Trabajando con los mejores"/>
 	<div class="row-span-2 border-orange bg-white mt-3 borde-y-12 w-[100%] border-logo-orange border-y-15 p-5">
-		<div class="relative h-27 lg:w-380 w-full" style={"--quantity: "+marcas.length}>
+		<div class="relative h-27 lg:w-full w-full overflow-hidden" style={"--quantity: "+marcas.length}>
 			{#each marcas as marca, i}
 				<img style={"--position: "+i+'s; --delay: '+marca.width} class="absolute top-5 z-1  mx-5 " src={marca.src} alt="" onclick={()=> goTo(i)}>
 			{/each}
