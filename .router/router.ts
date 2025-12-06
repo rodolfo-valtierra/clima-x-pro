@@ -1,6 +1,6 @@
 import { createRouter } from 'sv-router';
 import Index from '../src/routes/index.svelte';
-import ProductsId from '../src/routes/products/[id].svelte';
+import ProductosId from '../src/routes/productos/[id].svelte';
 import QuienesSomosIconText from '../src/routes/quienes-somos/IconText.svelte';
 import QuienesSomosIndex from '../src/routes/quienes-somos/index.svelte';
 import QuienesSomosInformation from '../src/routes/quienes-somos/information.svelte';
@@ -10,8 +10,8 @@ import ServicesId from '../src/routes/services/[id].svelte';
 
 export const routes = {
   '/': Index,
-  '/products': {
-    '/:id': ProductsId
+  '/productos': {
+    '/:id': ProductosId
   },
   '/quienes-somos': {
     '/IconText': QuienesSomosIconText,
