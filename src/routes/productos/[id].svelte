@@ -6,7 +6,6 @@ import Carousel from '$component/Carousel.svelte';
 import Products from '$utils/imgProducts.js';
 import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 
-console.log(Products)
 let product = $state(0);
 
 $effect(() => {

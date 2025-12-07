@@ -6,6 +6,36 @@
 	import BackService from '$lib/back-service.jpg'
 	import Title from '$component/Title.svelte'
   import {navigate} from 'sv-router/generated'
+
+
+   $effect(() => {
+    const sections = document.querySelectorAll('.section-out');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('section-out');
+          entry.target.classList.add('section-in');
+          observer.unobserve(entry.target);
+          }
+        })
+      }, 
+      {
+        root: null,
+        rootMargin: '10px',
+        threshold: 0.3
+    });
+
+    sections?.forEach(el => {
+      observer.observe(el);
+    });
+
+    return () => {
+      sections?.forEach(el => {
+        observer.unobserve(el);
+      });
+    }
+  })
 </script>
 
 <section  class="section-out flex flex-col place-content-center gap-10 w-full h-fit my-20 snap-center">

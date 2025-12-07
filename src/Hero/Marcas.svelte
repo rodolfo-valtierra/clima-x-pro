@@ -51,7 +51,7 @@
   @keyframes autoRun {
     from {
       opacity: 0;
-      left: 100%;
+      left: 90%;
     }
     5% {opacity: 1}
     95% {

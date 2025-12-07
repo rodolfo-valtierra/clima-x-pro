@@ -1,6 +1,5 @@
 <script>
 	import Siema from 'siema'
-  import {onMount} from 'svelte'
 
 	let {
     perPage = 3,
